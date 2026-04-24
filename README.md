@@ -7,15 +7,16 @@
 本项目使用 PyTorch 框架构建了一个多层 LSTM 神经网络，通过字符级别的语言建模来学习《西游记》的文本特征，实现自动生成具有古典文学风格的中文文本。
 
 ## 项目结构
+```
 LSTM/
 ├── data/
-│   └── xyj.txt              # 《西游记》原著文本数据
+│   └── xyj.txt   # 《西游记》原著文本数据
 ├── models/
-│   ├── lstm_xiyouji.pth     # 训练好的模型权重
-│   └── vocab.pkl            # 词汇表映射文件
+│   ├── lstm_xiyouji.pth   # 训练好的模型权重
+│   └── vocab.pkl    # 词汇表映射文件
 ├── lstm-text-generated.ipynb # 主程序（Jupyter Notebook）
-└── README.md                # 项目说明文档
-
+└── README.md   # 项目说明文档
+```
 ## 功能特性
 
 - **字符级语言建模**：以单个汉字为最小单位进行建模，能够生成任意汉字组合
@@ -39,16 +40,7 @@ LSTM/
 
 ## 环境要求
 
-- Python 3.8+
-- PyTorch 2.0+
-- NumPy
-- Jupyter Notebook
-
-## 安装依赖
-
-```bash
-pip install torch numpy jupyter
-```
+- 相关环境依赖请进入jupyter notebook查看
 
 ## 使用方法
 
@@ -70,7 +62,7 @@ NUM_LAYERS = 3        # LSTM 层数
 DROPOUT = 0.3         # Dropout 概率
 
 # 训练配置
-EPOCHS = 50           # 训练轮数
+EPOCHS = 10           # 训练轮数
 LEARNING_RATE = 0.001 # 学习率
 CONTINUE_TRAIN = 1    # 是否从已有模型继续训练
 
@@ -126,7 +118,7 @@ print(generated_text)
 - 使用 Adam 优化器
 - 学习率调度（ReduceLROnPlateau）
 - 梯度裁剪（防止梯度爆炸）
-- 每 5 个 epoch 保存一次模型
+- 每 1 个 epoch 保存一次模型
 
 ### 生成策略
 - 使用 softmax 概率分布采样
@@ -135,10 +127,8 @@ print(generated_text)
 
 ## 注意事项
 
-1. 首次运行需要较长时间构建词汇表和数据集
-2. 建议使用 GPU 进行训练，CPU 训练速度较慢
-3. 模型文件较大（约 35MB），请确保磁盘空间充足
-4. 生成的文本可能存在语法不通顺的情况，可通过降低 temperature 改善
+1. 建议使用 GPU 进行训练，CPU 训练速度较慢
+2. 生成的文本可能存在语法不通顺的情况，可通过降低 temperature 改善
 
 ## 许可证
 
@@ -148,3 +138,8 @@ print(generated_text)
 
 - 训练数据来源于《西游记》原著
 - 使用 PyTorch 深度学习框架
+
+>作者：Ailan Anjuxi
+>联系方式：
+  邮箱：anjuxi.ME@outlook.com
+  SIP电话：sip:anjuxi@sip.linphone.org
